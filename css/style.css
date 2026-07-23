@@ -1,0 +1,340 @@
+/* ********** Custom Properties ********** */
+:root {
+  /* 🎨 COLORES PRINCIPALES (Estilo Femenino / Rosa & Blanco) */
+  --primary-color: #db2777;    
+  /* Rosa elegante / Palo de rosa intenso: para botones principales y enlaces */
+  --secondary-color: #701a75;  
+  /* Ciruela / Vino profundo: para títulos, íconos y encabezados de gran contraste */
+  --accent-color: #fb7185;     
+  /* Rosa coral / Rose gold: para detalles llamativos, badges y llamadas a la acción */
+
+  /* 📝 COLORES DE TEXTO (Lectura suave y delicada) */
+  --text-main: #2d1a29;        
+  /* Berenjena muy oscuro: excelente lectura sin la dureza del negro puro */
+  --text-muted: #86687a;       
+  /* Gris rosado medio: para subtítulos, fechas e información secundaria */
+  --text-light: #fdf2f8;       
+  /* Blanco rosado / Marfil suave: para textos sobre superficies oscuras */
+
+  /* 🖼️ COLORES DE FONDO (Blancos rosados y capas claras) */
+  --bg-main: #fbf4f8;          
+  /* Blanco rosado mate: fondo general muy claro, suave y descanso para la vista */
+  --bg-surface: #ffffff;       
+  /* Blanco puro / Nácar: para resaltar las tarjetas (cards) y contenedores del fondo */
+  --bg-dark: #4c0519;          
+  /* Vino nocturno / Borra de vino: para el pie de página (footer) o secciones oscuras */
+
+  /* 🛠️ BORDES Y ESTADOS (Detalles técnicos) */
+  --border-color: #f3d5e5;     
+  /* Rosa pastel muy claro: para líneas divisorias y bordes delicados */
+  --error: #e11d48;            
+  /* Carmesí suave: para alertas de error */
+  --success: #10b981;          
+  /* Verde menta/esmeralda: para mensajes de confirmación */
+
+  /* ===== COLORES: WHATSAPP ===== */
+  --wsp-color-bg: #25d366;
+  --wsp-color-bg-hover: #1da851;
+  --wsp-color-icon: #fff;
+  --wsp-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  --wsp-shadow-hover: 0 6px 20px rgba(37, 211, 102, 0.6);
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 4rem;
+  --navbar-padding: 1.5rem 1rem;
+}
+
+/* ********** Reset ********** */
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 0.85rem; }
+h6 { font-size: 0.7rem; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ********** Utilidades ********** */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 105px;
+  right: 80px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--wsp-color-bg); 
+  color: var(--wsp-color-icon);
+  box-shadow: var(--wsp-shadow);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background-color: var(--wsp-color-bg-hover);
+  transform: scale(1.1);
+  box-shadow: var(--wsp-shadow-hover);
+}
+@keyframes pulse-whatsapp {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.whatsapp-float {
+  animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+.whatsapp-float svg {
+  fill: currentColor;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+section[id] {
+  scroll-margin-top: var(--header-height);
+  min-height: 100vh;
+}
+
+.text-center {
+  text-align: center; 
+}
+
+/* ********** Barra navegacion ********** */
+.navbar {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  z-index: 999;
+  padding: var(--navbar-padding);
+}
+
+.navbar > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Estado normal: ☰ */
+.menu-icon::before {
+  content: "\2630"; /* Unicode ☰ */
+}
+
+/* Cuando el menú está desplegado: ✖ */
+.menu-toggle:checked + .menu-icon::before {
+  content: "\2715"; /* Unicode ✖ */
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  background: var(--bg-dark);
+  position: absolute;
+  top: 100%;          
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  border-radius: 15px;
+}
+
+.menu a {
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.menu a:hover {
+  background: var(--accent-color);
+}
+
+.menu-toggle:checked ~ .menu {
+  display: flex;
+}
+
+/* Desktop: desde 1024px en adelante */
+@media (min-width: 1024px) {
+  .navbar {
+    top: 0;
+    bottom: auto;
+    padding: var(--navbar-padding);
+  }
+  .navbar > .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  .logo {
+    position: static;             
+  }
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    width: auto;
+  }
+  .menu a {
+    border: none;
+    padding: 0 1rem;
+  }
+  .menu-icon {
+    display: none;                 
+  }
+  .menu a:hover {
+    background: none;
+}
+} 
+
+/* ********** Hero ********** */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: var(--header-height); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-light);
+  background-color: #1e293b; /* fallback si la imagen no carga */
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* capa oscura para legibilidad */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: 2rem 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 2rem;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.btn-cta {
+  background-color: var(--primary-color);
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-cta:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.btn-cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
