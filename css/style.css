@@ -15,6 +15,8 @@
   /* Gris rosado medio: para subtítulos, fechas e información secundaria */
   --text-light: #fdf2f8;       
   /* Blanco rosado / Marfil suave: para textos sobre superficies oscuras */
+  --text-description: rgba(253, 242, 248, .9);
+  /* Descripciones sobre fondos oscuros (hero/footer) */
 
   /* 🖼️ COLORES DE FONDO (Blancos rosados y capas claras) */
   --bg-main: #fbf4f8;          
@@ -109,7 +111,7 @@ p {
 
 .whatsapp-float {
   position: fixed;
-  bottom: 105px;
+  bottom: 120px;
   right: 80px;
   z-index: 999;
   display: flex;
@@ -133,6 +135,39 @@ p {
 @keyframes pulse-whatsapp {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.08); }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 1.2rem;
+  background-color: var(--primary-color);
+  font-size: 0.95rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-w-50 {
+  display: block;
+  width: 50%;
 }
 
 .whatsapp-float {
@@ -324,16 +359,12 @@ section[id] {
 }
 
 .hero-description {
-  max-width: 38rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, .9);
-}
-
-.hero-description {
-  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-description);
   line-height: 1.7;
   max-width: 42rem;
-  text-align: justify;
+  text-align: center;
 }
 
 /* ========== TABLET ========== */
@@ -360,6 +391,11 @@ section[id] {
     text-align: left;
   }
 
+  .hero-description {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
   .hero-image {
     display: flex;
     justify-content: center;
@@ -383,10 +419,9 @@ section[id] {
   }
 
   .title-hero {
-    font-size: 5rem;
-    line-height: 1;
-    max-width: 10ch;
+    font-size: 4.5rem;
+    line-height: 1.2;
+    max-width: 12ch;
     text-align: left;
-
   }
 }
