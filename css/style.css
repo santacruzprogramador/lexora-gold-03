@@ -148,6 +148,7 @@ p {
   display: inline-block;
   padding: 1rem 1.2rem;
   background-color: var(--primary-color);
+  color: #ffffff;
   font-size: 0.95rem;
   text-align: center;
   text-decoration: none;
@@ -159,6 +160,7 @@ p {
 
 .btn:hover {
   background-color: var(--secondary-color);
+  color: #ffffff
 }
 
 .btn:active {
