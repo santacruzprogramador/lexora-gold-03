@@ -6,7 +6,7 @@ Esta plantilla web es un producto comercial creado para profesionales y empresas
 
 ## 🌐 Demo
 
-https://legal-gold-03.vercel.app/
+https://lexora-gold-03.vercel.app/
 
 ### ✅ Uso permitido
 
