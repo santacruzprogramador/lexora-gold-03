@@ -606,7 +606,6 @@ section[id] {
 }
 
 /* ********** CONTACT ********** */
-
 .contact-content {
   display: flex;
   flex-direction: column;
@@ -700,17 +699,17 @@ section[id] {
 }
 
 /* MAPA */
-
 .map-placeholder {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 320px;
-
-  cursor: pointer;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
+
+.map-button {
+  position:absolute;
+}
+
 
 .map-placeholder img {
   display: block;
@@ -718,6 +717,7 @@ section[id] {
   height: 100%;
   object-fit: cover;
 }
+
 .contact-map {
   margin: 0;
   overflow: hidden;
@@ -726,36 +726,30 @@ section[id] {
 }
 
 .map-button {
-  position: absolute;
+  min-width:120px;
+  min-height:48px;
+  padding:.8rem 1.5rem;
 
-  min-width: 120px;
-  min-height: 48px;
+  border:none;
+  border-radius:.75rem;
 
-  padding: .8rem 1.5rem;
+  background:var(--secondary-color);
+  color:var(--text-light);
 
-  border: none;
-  border-radius: .75rem;
+  font-size:1rem;
+  font-weight:700;
 
-  background: var(--primary-color);
-  color: var(--text-light);
-
-  font-size: 1rem;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: background .3s ease, transform .2s ease;
+  cursor:pointer;
+  transition:.3s ease;
 }
 
 .map-button:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
+  background:var(--primary-color);
 }
 
-.map-button:focus-visible,
-.map-placeholder:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 4px;
+.map-button:focus-visible {
+  outline:3px solid var(--accent-color);
+  outline-offset:3px;
 }
 
 /* TABLET */
@@ -796,7 +790,6 @@ section[id] {
     font-size: 1.05rem;
   }
 }
-
 
 /* DESKTOP */
 @media (min-width: 1024px) {
