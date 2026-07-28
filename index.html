@@ -444,19 +444,28 @@
         </nav>
       </article>
 
-      <figure class="contact-map">
-        <!-- Reemplaza el src con tu enlace de inserción real de Google Maps -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016887859546!2d-68.417!3d-34.966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDU3JzU3LjYiUyA2OMKwMjUnMDEuMiJX!5e0!3m2!1ses!2sar!4v1650000000000!5m2!1ses!2sar"
-          title="Ubicación del consultorio en General Alvear, Mendoza"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </figure>
+<figure class="contact-map">
+  <div 
+    class="map-placeholder"
+    role="button"
+    tabindex="0"
+    aria-label="Cargar mapa de ubicación del consultorio"
+    data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016887859546!2d-68.417!3d-34.966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDU3JzU3LjYiUyA2OMKwMjUnMDEuMiJX!5e0!3m2!1ses!2sar!4v1650000000000!5m2!1ses!2sar">
+    
+    <img
+      src="/images/map-preview.webp"
+      alt="Ubicación del consultorio en General Alvear, Mendoza"
+      width="800"
+      height="450"
+      loading="lazy"
+      decoding="async">
+
+    <button type="button" class="map-button">
+      Ver mapa
+    </button>
+  </div>
+</figure>
+
 
     </div>
 
