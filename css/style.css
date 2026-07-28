@@ -614,7 +614,6 @@ section[id] {
 }
 
 .contact-info {
-  padding: 2rem;
   background: var(--bg-surface);
   border-radius: 1.25rem;
   box-shadow: 0 15px 35px rgba(45, 26, 41, .08);
